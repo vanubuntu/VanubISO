@@ -9,18 +9,18 @@ on:
 
 jobs:
   build:
-    if: "${{ github.repository }} == \"notvanubuntu/VanubISO\""
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build ISOs
-        run: ./vanubuntu.sh
+        run: sudo bash ./vanubuntu.sh
 
-      - name: Upload artifacts
+      - name: Upload artifact
         uses: actions/upload-artifact@v2
+        if: '"${{ github.repository }}" == "vanubuntu/VanubISO"'
         with:
           name: ISOs
           path: |
-            *.iso
+            ubuntu-vanilla-gnome-*.iso

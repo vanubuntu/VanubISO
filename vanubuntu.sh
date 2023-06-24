@@ -8,14 +8,16 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 echo ">>> VANUBUNTU DAILY BUILD TOOL <<<"
-
+if [ ! "${{github.repository}}" == "" ] then
+  echo "Running build on a VanubISO GitHub Actions workflow"
+fi
 echo "Installing debootstrap and schroot..."
 sudo apt-get install -y debootstrap schroot
 
-echo "Creating chroot..."
+echo "Setting up fake Vanubuntu..."
 sudo debootstrap --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
 
-echo "Configuring chroot..."
+echo "Preparing fake Vanubuntu..."
 sudo tee /etc/schroot/chroot.d/vanubuntu.conf <<EOF
 [vanubuntu]
 description=Vanubuntu $VANUBUNTU_VERSION daily build
