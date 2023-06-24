@@ -8,7 +8,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 echo ">>> VANUBUNTU DAILY BUILD TOOL <<<"
-if [ ! "${{github.repository}}" == "" ] then
+if [ ! "${{github.repository}}" == "" ]; then
   echo "Running build on a VanubISO GitHub Actions workflow"
 fi
 echo "Installing debootstrap and schroot..."
