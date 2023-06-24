@@ -14,15 +14,13 @@ echo "Setting up fake Vanubuntu..."
 debootstrap --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
 
 echo "Preparing fake Vanubuntu..."
-echo <<EOF
-[vanubuntu]
+echo """[vanubuntu]
 description=Vanubuntu $VANUBUNTU_VERSION daily build
 directory=/tmp/vanubuntu-daily-build-chroot
 personality=linux
 root-users=root
 type=directory
-users=$USER
-EOF | tee /etc/schroot/chroot.d/vanubuntu.conf
+users=$USER""" > /etc/schroot/chroot.d/vanubuntu.conf
 
 echo "Adding universe..."
 schroot -c vanubuntu -- add-apt-repository universe -y
@@ -43,8 +41,7 @@ echo "Removing Ubuntu Livepatch and Remmina..."
 schroot -c vanubuntu -- apt-get remove --purge remmina -y
 
 echo "Editing lsb-release file..."
-echo <<EOF
-PRETTY_NAME="Vanubuntu $VANUBUNTU_VERSION"
+echo """PRETTY_NAME="Vanubuntu $VANUBUNTU_VERSION"
 NAME="Vanubuntu GNU/Linux"
 VERSION_ID="$VANUBUNTU_VERSION"
 VERSION="$VANUBUNTU_VERSION ($VANUBUNTU_CODENAME)"
@@ -53,8 +50,7 @@ ID=vanubuntu
 ID_LIKE=ubuntu
 HOME_URL="https://vanubuntu.github.io"
 SUPPORT_URL="https://github.com/vanubuntu/VanubISO/wiki"
-BUG_REPORT_URL="https://github.com/vanubuntu/VanubISO/issues/new/choose"
-EOF | tee /tmp/vanubuntu-daily-build-chroot/etc/os-release
+BUG_REPORT_URL="https://github.com/vanubuntu/VanubISO/issues/new/choose""" > /tmp/vanubuntu-daily-build-chroot/etc/os-release
 
 echo "Creating Vanubuntu ISO file..."
 bash -c "tar -cvzf vanubuntu-x64.iso $GITHUB_WORKSPACE -C /tmp/vanubuntu-daily-build-chroot"
