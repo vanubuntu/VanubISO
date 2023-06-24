@@ -8,13 +8,13 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 echo "Installing build tools..."
-sudo apt-get install -y debootstrap schroot
+apt-get install -y debootstrap schroot
 
 echo "Setting up fake Vanubuntu..."
-sudo debootstrap --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
+debootstrap --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
 
 echo "Preparing fake Vanubuntu..."
-sudo tee /etc/schroot/chroot.d/vanubuntu.conf <<EOF
+echo <<EOF
 [vanubuntu]
 description=Vanubuntu $VANUBUNTU_VERSION daily build
 directory=/tmp/vanubuntu-daily-build-chroot
@@ -22,25 +22,25 @@ personality=linux
 root-users=root
 type=directory
 users=$USER
-EOF
+EOF | tee /etc/schroot/chroot.d/vanubuntu.conf
 
 echo "Adding universe..."
-sudo schroot -c vanubuntu -- add-apt-repository universe -y
+schroot -c vanubuntu -- add-apt-repository universe -y
 
 echo "Entering the MULTIVERSE... (non-free software, richard stallman will be angry)"
-sudo schroot -c vanubuntu -- add-apt-repository multiverse -y
+schroot -c vanubuntu -- add-apt-repository multiverse -y
 
 echo "Updating packages..."
-sudo schroot -c vanubuntu -- apt-get update && sudo schroot -c vanubuntu -- apt-get upgrade -y
+schroot -c vanubuntu -- apt-get update && schroot -c vanubuntu -- apt-get upgrade -y
 
 echo "Installing GNOME desktop environment..."
-sudo schroot -c vanubuntu -- apt-get install -y gnome-session gnome-boxes gnome-connections firefox
+schroot -c vanubuntu -- apt-get install -y gnome-session gnome-boxes gnome-connections firefox
 
 echo "Removing Ubuntu-related packages..."
-sudo schroot -c vanubuntu -- apt-get remove --purge ubuntu-desktop gnome* && sudo schroot -c vanubuntu -- apt-get autoremove -y && sudo schroot -c vanubuntu -- apt-get autoclean && sudo schroot -c vanubuntu -- apt-get clean
+schroot -c vanubuntu -- apt-get remove --purge ubuntu-desktop gnome* && schroot -c vanubuntu -- apt-get autoremove -y && schroot -c vanubuntu -- apt-get autoclean && schroot -c vanubuntu -- apt-get clean
 
 echo "Removing Ubuntu Livepatch and Remmina..."
-sudo schroot -c vanubuntu -- apt-get remove --purge remmina -y
+schroot -c vanubuntu -- apt-get remove --purge remmina -y
 
 echo "Editing lsb-release file..."
 echo <<EOF
@@ -54,12 +54,12 @@ ID_LIKE=ubuntu
 HOME_URL="https://vanubuntu.github.io"
 SUPPORT_URL="https://github.com/vanubuntu/VanubISO/wiki"
 BUG_REPORT_URL="https://github.com/vanubuntu/VanubISO/issues/new/choose"
-EOF | sudo tee /tmp/vanubuntu-daily-build-chroot/etc/os-release
+EOF | tee /tmp/vanubuntu-daily-build-chroot/etc/os-release
 
 echo "Creating Vanubuntu ISO file..."
-sudo bash -c "cd /tmp/vanubuntu-daily-build-chroot && tar -cvzf ubuntu-vanilla-gnome-$VANUBUNTU_VERSION_CODE-x64.iso /tmp"
+bash -c "tar -cvzf vanubuntu-x64.iso $GITHUB_WORKSPACE -C /tmp/vanubuntu-daily-build-chroot"
 
 echo "Deleting chroot..."
-sudo rm -rf /tmp/vanubuntu-daily-build-chroot
+rm -rf /tmp/vanubuntu-daily-build-chroot
 
 echo "Vanubuntu $VANUBUNTU_VERSION successfully built"
