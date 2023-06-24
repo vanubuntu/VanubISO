@@ -20,6 +20,10 @@ root-users=root
 type=directory
 users=$USER""" > /etc/schroot/chroot.d/vanubuntu.conf
 schroot -c vanubuntu -- add-apt-repository ppa:mozillateam/ppa -y
+echo "Making apt prefs..."
+cp ./make-prefs.sh /tmp/vanubuntu-daily-build-chroot/
+schroot -c vanubuntu -- bash /make-prefs.sh
+schroot -c vanubuntu -- rm /make-prefs.sh
 
 echo "Updating packages..."
 schroot -c vanubuntu -- apt-get update && schroot -c vanubuntu -- apt-get upgrade -y
