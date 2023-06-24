@@ -32,16 +32,16 @@ echo "Installing GNOME desktop environment..."
 schroot -c vanubuntu -- apt-get install -y gnome-session gnome-boxes gnome-connections gnome-core firefox
 
 echo "Editing lsb-release file..."
-echo """PRETTY_NAME="Vanubuntu $VANUBUNTU_VERSION"
-NAME="Vanubuntu GNU/Linux"
-VERSION_ID="$VANUBUNTU_VERSION"
-VERSION="$VANUBUNTU_VERSION ($VANUBUNTU_CODENAME)"
+echo """PRETTY_NAME=\"Vanubuntu $VANUBUNTU_VERSION\"
+NAME=\"Vanubuntu GNU/Linux\"
+VERSION_ID=\"$VANUBUNTU_VERSION\"
+VERSION=\"$VANUBUNTU_VERSION ($VANUBUNTU_CODENAME)\"
 VERSION_CODENAME=$VANUBUNTU_CODENAME
 ID=vanubuntu
 ID_LIKE=ubuntu
-HOME_URL="https://vanubuntu.github.io"
-SUPPORT_URL="https://github.com/vanubuntu/VanubISO/wiki"
-BUG_REPORT_URL="https://github.com/vanubuntu/VanubISO/issues/new/choose""" > /tmp/vanubuntu-daily-build-chroot/etc/os-release
+HOME_URL=\"https://vanubuntu.github.io\"
+SUPPORT_URL=\"https://github.com/vanubuntu/VanubISO/wiki\"
+BUG_REPORT_URL=\"https://github.com/vanubuntu/VanubISO/issues/new/choose\"""" > /tmp/vanubuntu-daily-build-chroot/etc/os-release
 
 echo "Creating Vanubuntu ISO file..."
 bash -c "tar -cvzf vanubuntu-x64.iso $GITHUB_WORKSPACE -C /tmp/vanubuntu-daily-build-chroot"
