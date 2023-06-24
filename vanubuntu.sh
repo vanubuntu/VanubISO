@@ -11,7 +11,7 @@ echo "Installing build tools..."
 apt-get install -y debootstrap schroot
 
 echo "Setting up fake Vanubuntu..."
-debootstrap --include="add-apt-repository,ubiquity,squashfs-tools,lsb-release" --components="main,restricted,universe,multiverse" --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
+debootstrap --include="software-properties-common,ubiquity,squashfs-tools,lsb-release" --components="main,restricted,universe,multiverse" --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
 echo """[vanubuntu]
 description=Vanubuntu $VANUBUNTU_VERSION daily LIVE ISO build
 directory=/tmp/vanubuntu-daily-build-chroot
