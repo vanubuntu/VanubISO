@@ -24,6 +24,12 @@ type=directory
 users=$USER
 EOF
 
+echo "Adding universe..."
+sudo schroot -c vanubuntu -- add-apt-repository universe -y
+
+echo "Entering the MULTIVERSE... (non-free software, richard stallman will be angry)"
+sudo schroot -c vanubuntu -- add-apt-repository multiverse -y
+
 echo "Updating packages..."
 sudo schroot -c vanubuntu -- apt-get update && sudo schroot -c vanubuntu -- apt-get upgrade -y
 
