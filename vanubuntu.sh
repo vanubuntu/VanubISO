@@ -11,34 +11,22 @@ echo "Installing build tools..."
 apt-get install -y debootstrap schroot
 
 echo "Setting up fake Vanubuntu..."
-debootstrap --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
+debootstrap --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/ --include="add-apt-repository,ubiquity,squashfs-tools,lsb-release" --components="main,restricted,universe,multiverse"
 
 echo "Preparing fake Vanubuntu..."
 echo """[vanubuntu]
-description=Vanubuntu $VANUBUNTU_VERSION daily build
+description=Vanubuntu $VANUBUNTU_VERSION daily LIVE ISO build
 directory=/tmp/vanubuntu-daily-build-chroot
 personality=linux
 root-users=root
 type=directory
 users=$USER""" > /etc/schroot/chroot.d/vanubuntu.conf
 
-echo "Adding universe..."
-schroot -c vanubuntu -- add-apt-repository universe -y
-
-echo "Entering the MULTIVERSE... (non-free software, richard stallman will be angry)"
-schroot -c vanubuntu -- add-apt-repository multiverse -y
-
 echo "Updating packages..."
 schroot -c vanubuntu -- apt-get update && schroot -c vanubuntu -- apt-get upgrade -y
 
 echo "Installing GNOME desktop environment..."
 schroot -c vanubuntu -- apt-get install -y gnome-session gnome-boxes gnome-connections firefox
-
-echo "Removing Ubuntu-related packages..."
-schroot -c vanubuntu -- apt-get remove --purge ubuntu-desktop canonical-livepatch && schroot -c vanubuntu -- apt-get autoremove -y && schroot -c vanubuntu -- apt-get autoclean && schroot -c vanubuntu -- apt-get clean
-
-echo "Removing Remmina..."
-schroot -c vanubuntu -- apt-get remove --purge remmina -y
 
 echo "Editing lsb-release file..."
 echo """PRETTY_NAME="Vanubuntu $VANUBUNTU_VERSION"
