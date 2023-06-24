@@ -20,6 +20,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Vanubuntu system
+          name: Vanubuntu x64 ISO
           path: |
-            /tmp/ubuntu-vanilla-gnome-*.iso
+            vanubuntu-x64.iso
