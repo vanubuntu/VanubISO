@@ -51,7 +51,7 @@ BUG_REPORT_URL="https://github.com/vanubuntu/VanubISO/issues/new/choose"
 EOF | sudo tee /tmp/vanubuntu-daily-build-chroot/etc/os-release
 
 echo "Creating Vanubuntu ISO file..."
-sudo bash -c "cd /tmp/vanubuntu-daily-build-chroot && tar -cvzf ubuntu-vanilla-gnome-$VANUBUNTU_VERSION_CODE-x64.iso /root"
+sudo bash -c "cd /tmp/vanubuntu-daily-build-chroot && tar -cvzf ubuntu-vanilla-gnome-$VANUBUNTU_VERSION_CODE-x64.iso /tmp"
 
 echo "Deleting chroot..."
 sudo rm -rf /tmp/vanubuntu-daily-build-chroot
