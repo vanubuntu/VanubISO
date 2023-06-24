@@ -12,8 +12,6 @@ apt-get install -y debootstrap schroot
 
 echo "Setting up fake Vanubuntu..."
 debootstrap --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE /tmp/vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/ --include="add-apt-repository,ubiquity,squashfs-tools,lsb-release" --components="main,restricted,universe,multiverse"
-
-echo "Preparing fake Vanubuntu..."
 echo """[vanubuntu]
 description=Vanubuntu $VANUBUNTU_VERSION daily LIVE ISO build
 directory=/tmp/vanubuntu-daily-build-chroot
@@ -21,12 +19,13 @@ personality=linux
 root-users=root
 type=directory
 users=$USER""" > /etc/schroot/chroot.d/vanubuntu.conf
+schroot -c vanubuntu -- add-apt-repository ppa:mozillateam/ppa -y
 
 echo "Updating packages..."
 schroot -c vanubuntu -- apt-get update && schroot -c vanubuntu -- apt-get upgrade -y
 
 echo "Installing GNOME desktop environment..."
-schroot -c vanubuntu -- apt-get install -y gnome-session gnome-boxes gnome-connections firefox
+schroot -c vanubuntu -- apt-get install -y gnome-session gnome-boxes gnome-connections gnome-core firefox
 
 echo "Editing lsb-release file..."
 echo """PRETTY_NAME="Vanubuntu $VANUBUNTU_VERSION"
