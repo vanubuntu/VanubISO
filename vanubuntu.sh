@@ -35,9 +35,9 @@ echo "Installing GNOME desktop environment..."
 schroot -c vanubuntu -- apt-get install -y gnome-session gnome-boxes gnome-connections firefox
 
 echo "Removing Ubuntu-related packages..."
-schroot -c vanubuntu -- apt-get remove --purge ubuntu-desktop gnome* && schroot -c vanubuntu -- apt-get autoremove -y && schroot -c vanubuntu -- apt-get autoclean && schroot -c vanubuntu -- apt-get clean
+schroot -c vanubuntu -- apt-get remove --purge ubuntu-desktop canonical-livepatch && schroot -c vanubuntu -- apt-get autoremove -y && schroot -c vanubuntu -- apt-get autoclean && schroot -c vanubuntu -- apt-get clean
 
-echo "Removing Ubuntu Livepatch and Remmina..."
+echo "Removing Remmina..."
 schroot -c vanubuntu -- apt-get remove --purge remmina -y
 
 echo "Editing lsb-release file..."
