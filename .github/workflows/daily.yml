@@ -1,0 +1,26 @@
+name: Vanubuntu Daily Build
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    if: "${{ github.repository }} == \"notvanubuntu/VanubISO\""
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build ISOs
+        run: ./vanubuntu.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: ISOs
+          path: |
+            *.iso
