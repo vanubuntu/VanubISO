@@ -7,11 +7,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-echo ">>> VANUBUNTU DAILY BUILD TOOL <<<"
-if [ ! "${{github.repository}}" == "" ]; then
-  echo "Running build on a VanubISO GitHub Actions workflow"
-fi
-echo "Installing debootstrap and schroot..."
+echo "Installing build tools..."
 sudo apt-get install -y debootstrap schroot
 
 echo "Setting up fake Vanubuntu..."
@@ -38,7 +34,7 @@ echo "Removing Ubuntu-related packages..."
 sudo schroot -c vanubuntu -- apt-get remove --purge ubuntu-desktop gnome* && sudo schroot -c vanubuntu -- apt-get autoremove -y && sudo schroot -c vanubuntu -- apt-get autoclean && sudo schroot -c vanubuntu -- apt-get clean
 
 echo "Removing Ubuntu Livepatch and Remmina..."
-sudo schroot -c vanubuntu -- apt-get remove --purge ubuntu-livepatch remmina -y
+sudo schroot -c vanubuntu -- apt-get remove --purge remmina -y
 
 echo "Editing lsb-release file..."
 echo <<EOF
@@ -54,8 +50,8 @@ SUPPORT_URL="https://github.com/vanubuntu/VanubISO/wiki"
 BUG_REPORT_URL="https://github.com/vanubuntu/VanubISO/issues/new/choose"
 EOF | sudo tee /tmp/vanubuntu-daily-build-chroot/etc/os-release
 
-echo "Creating ISO file..."
-sudo bash -c "cd /tmp/vanubuntu-daily-build-chroot && tar -cvzf /ubuntu-vanilla-gnome-$VANUBUNTU_VERSION_CODE-x64.iso ."
+echo "Creating Vanubuntu ISO file..."
+sudo bash -c "cd /tmp/vanubuntu-daily-build-chroot && tar -cvzf ubuntu-vanilla-gnome-$VANUBUNTU_VERSION_CODE-x64.iso /root"
 
 echo "Deleting chroot..."
 sudo rm -rf /tmp/vanubuntu-daily-build-chroot
