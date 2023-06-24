@@ -22,4 +22,4 @@ jobs:
         with:
           name: Vanubuntu x64 ISO
           path: |
-            vanubuntu-x64.iso
+            ./vanubuntu-x64.iso
