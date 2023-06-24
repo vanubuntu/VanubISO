@@ -20,6 +20,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Vanubuntu Linux daily build ISO
+          name: Vanubuntu system
           path: |
-            /root/ubuntu-vanilla-gnome-*.iso
+            /tmp/ubuntu-vanilla-gnome-*.iso
