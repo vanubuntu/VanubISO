@@ -44,7 +44,7 @@ SUPPORT_URL=\"https://github.com/vanubuntu/VanubISO/wiki\"
 BUG_REPORT_URL=\"https://github.com/vanubuntu/VanubISO/issues/new/choose\"""" > /tmp/vanubuntu-daily-build-chroot/etc/os-release
 
 echo "Creating Vanubuntu ISO file..."
-bash -c "tar -cvzf vanubuntu-x64.iso $GITHUB_WORKSPACE -C /tmp/vanubuntu-daily-build-chroot"
+bash -c "tar -cvzf vanubuntu-x64.iso . -C /tmp/vanubuntu-daily-build-chroot"
 
 echo "Deleting chroot..."
 rm -rf /tmp/vanubuntu-daily-build-chroot
