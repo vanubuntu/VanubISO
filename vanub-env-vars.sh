@@ -1,6 +1,6 @@
 # change this value to the latest ubuntu version details for an upgrade
-export VANUBUNTU_VERSION_CODE="lunar"
-export VANUBUNTU_VERSION="23.04"
+export VANUBUNTU_VERSION_CODE="mantic"
+export VANUBUNTU_VERSION="23.10"
 
 # is this version in development?
 # 0: no
