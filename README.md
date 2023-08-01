@@ -1,7 +1,7 @@
 # Vanubuntu ISO
 
 This repository contains the `vanubISO` command line tool to build Vanubuntu from an
-existing Ubuntu image. It also contains some patches to original Ubuntu code
+Ubuntu temporary chroot. It also contains some patches to original Ubuntu code
 that makes Vanubuntu work properly, preventing any bug rendering.
 
 ## Why does this exist?
@@ -15,5 +15,4 @@ reasons:
   every app and package meant for Cinnamon as well as Linux Mint.
 * Vanubuntu updates are slower when forking an existing mod of Ubuntu.
   Independent development of Vanubuntu scripts make the updating faster.
-* UCR is still configured for an unsupported version of Ubuntu.
-  This makes upgrading to *23.04* or *22.04 **LTS*** much harder.
+* UCR is still configured for an unsupported version of Ubuntu (18.04).
