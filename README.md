@@ -16,3 +16,11 @@ reasons:
 * Vanubuntu updates are slower when forking an existing mod of Ubuntu.
   Independent development of Vanubuntu scripts make the updating faster.
 * UCR is still configured for an unsupported version of Ubuntu (18.04).
+
+## Building
+
+Non-Debian based distros will probably not offer debootstrap, which is required
+for VanubISO to work. This means you'll probably want to build the distro
+on Debian or Ubuntu.
+
+Run `vanubuntu.sh` to run the build.
