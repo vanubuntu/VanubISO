@@ -11,17 +11,17 @@ echo "Installing build tools..."
 apt-get install -y debootstrap schroot
 
 echo "Setting up fake Vanubuntu..."
-debootstrap --include="software-properties-common,ubiquity,squashfs-tools,lsb-release,git,gnome-session,ubiquity-frontend-gtk" --components="main,restricted,universe,multiverse" --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE ~/.vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
+debootstrap --include="software-properties-common,ubiquity,squashfs-tools,lsb-release,git,gnome-session,ubiquity-frontend-gtk" --components="main,restricted,universe,multiverse" --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE $HOME/.vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
 echo """[vanubuntu]
 description=Vanubuntu $VANUBUNTU_VERSION daily LIVE ISO build
-directory=~/.vanubuntu-daily-build-chroot
+directory=$HOME/.vanubuntu-daily-build-chroot
 personality=linux
 root-users=root
 type=directory
 users=$USER""" > /etc/schroot/chroot.d/vanubuntu.conf
 schroot -c vanubuntu -- add-apt-repository ppa:mozillateam/ppa -y
 echo "Making apt prefs..."
-cp ./make-prefs.sh ~/.vanubuntu-daily-build-chroot/
+cp ./make-prefs.sh $HOME/.vanubuntu-daily-build-chroot/
 schroot -c vanubuntu -- bash /make-prefs.sh
 schroot -c vanubuntu -- rm /make-prefs.sh
 
@@ -41,12 +41,12 @@ ID=vanubuntu
 ID_LIKE=ubuntu
 HOME_URL=\"https://vanubuntu.github.io\"
 SUPPORT_URL=\"https://github.com/vanubuntu/VanubISO/wiki\"
-BUG_REPORT_URL=\"https://github.com/vanubuntu/VanubISO/issues/new/choose\"""" > ~/.vanubuntu-daily-build-chroot/etc/os-release
+BUG_REPORT_URL=\"https://github.com/vanubuntu/VanubISO/issues/new/choose\"""" > $HOME/.vanubuntu-daily-build-chroot/etc/os-release
 
 echo "Creating Vanubuntu ISO file..."
-bash -c "tar -cvzf vanubuntu-x64.iso . -C ~/.vanubuntu-daily-build-chroot"
+bash -c "tar -cvzf vanubuntu-x64.iso . -C $HOME/.vanubuntu-daily-build-chroot"
 
 echo "Deleting chroot..."
-rm -rf ~/.vanubuntu-daily-build-chroot
+rm -rf $HOME/.vanubuntu-daily-build-chroot
 
 echo "Vanubuntu $VANUBUNTU_VERSION successfully built"
