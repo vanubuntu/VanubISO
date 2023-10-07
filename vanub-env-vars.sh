@@ -1,6 +1,9 @@
 # change this value to the latest ubuntu version details for an upgrade
-export VANUBUNTU_VERSION_CODE="mantic"
-export VANUBUNTU_VERSION="23.10"
+# due to compatibility reasons we are using jammy script
+# when 24.04 comes out we will use it
+# if we can move to a custom runner we can follow the latest update cycle
+export VANUBUNTU_VERSION_CODE="jammy"
+export VANUBUNTU_VERSION="22.04"
 
 # is this version in development?
 # 0: no
