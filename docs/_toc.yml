@@ -7,4 +7,4 @@ subtrees:
   reversed: False
   titlesonly: True
   entries:
-  - file: index.rst
+  - file: vfy/blacklist
