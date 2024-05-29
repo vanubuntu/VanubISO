@@ -156,7 +156,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'Vanubuntu', 'Vanubuntu Documentation',
-     author, 'Vanubuntu', 'One line description of project.',
+     author, 'Vanubuntu', 'The Official Vanubuntu Docs',
      'Miscellaneous'),
 ]
 
