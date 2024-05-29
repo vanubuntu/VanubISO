@@ -1,0 +1,6 @@
+root: index
+subtrees:
+- entries:
+  - file: blacklist
+  - url: https://github.com/vanubuntu/VanubISO
+    title: VanubISO Source Code
