@@ -1,0 +1,6 @@
+# ISO files
+*.iso
+
+# Finder view settings
+.DS_Store
+_MACOSX
