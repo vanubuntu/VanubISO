@@ -11,7 +11,7 @@ whiptail \
 
 while true; do
   menu
-  if [ $? = 0 ]; then
+  if [ $? != 0 ]; then
     exit
   fi
 done
