@@ -38,16 +38,9 @@ release = '24.04 alpha'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
-]
+extensions = ["sphinx_external_toc"]
+external_toc_path = "_toc.yml"  # optional, default: _toc.yml
+external_toc_exclude_missing = False  # optional, default: False
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
