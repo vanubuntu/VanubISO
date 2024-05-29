@@ -7,9 +7,9 @@ subtrees:
   reversed: False
   titlesonly: True
   entries:
-  - file: vfy/index
+  - file: vfy/intro
 subtrees:
-- caption: Others
+- caption: Iceberg
   hidden: False
   maxdepth: 1
   numbered: False
