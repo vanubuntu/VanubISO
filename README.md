@@ -17,6 +17,10 @@ reasons:
   Independent development of Vanubuntu scripts make the updating faster.
 * UCR is still configured for an unsupported version of Ubuntu (18.04).
 
+Our goal is to make a 99% vanilla GNOME experience. If this project goes very
+well and if it gets popular enough, we could end up being allowed into the ubuntu
+flavours website.
+
 ## Building
 
 Non-Debian based distros will probably not offer debootstrap, which is required
@@ -26,3 +30,5 @@ on Debian or Ubuntu.
 Run `bash ./vanubuntu.sh` as root to run the build.
 You can also pass the "flatpak" and/or "gsconnect" arguments to install the
 respective packages.
+
+Building takes around 5 minutes, depending on what packages you select.
