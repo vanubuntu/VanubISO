@@ -21,11 +21,21 @@ Our goal is to make a 99% vanilla GNOME experience. If this project goes very
 well and if it gets popular enough, we could end up being allowed into the ubuntu
 flavours website.
 
+## Download Builds
+
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/vanubuntu/vanubISO/daily.yml?style=plastic&logo=ubuntu&label=daily%20builds)
+
+Live images are built every day at 12:00 UTC and can be found
+[here](https://github.com/vanubuntu/VanubISO/actions/workflows/daily.yml).
+You can also build your own images, see below.
+
 ## Building
 
 Non-Debian based distros will probably not offer debootstrap, which is required
 for VanubISO to work. This means you'll probably want to build the distro
 on Debian or Ubuntu.
+
+WSL has not been tested, you may need to enable wsl's systemd for it to work.
 
 ### Basic Build
 
