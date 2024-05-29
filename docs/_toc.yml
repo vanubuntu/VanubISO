@@ -8,6 +8,7 @@ subtrees:
   titlesonly: True
   entries:
   - file: vfy/intro
+    title: Index
 subtrees:
 - caption: Iceberg
   hidden: False
