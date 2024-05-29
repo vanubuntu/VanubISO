@@ -1,6 +1,10 @@
 root: index
 subtrees:
-- entries:
-  - file: blacklist
-  - url: https://github.com/vanubuntu/VanubISO
-    title: VanubISO Source Code
+- caption: Vanubuntu for You
+  hidden: False
+  maxdepth: 1
+  numbered: True
+  reversed: False
+  titlesonly: True
+  entries:
+  - file: index.rst
