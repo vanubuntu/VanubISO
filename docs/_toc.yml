@@ -2,7 +2,7 @@ root: index
 subtrees:
 - caption: Vanubuntu for You
   hidden: False
-  maxdepth: 1
+  maxdepth: 2
   numbered: True
   reversed: False
   titlesonly: True
@@ -12,7 +12,7 @@ subtrees:
 - caption: Others
   hidden: False
   maxdepth: 1
-  numbered: True
+  numbered: False
   reversed: False
   titlesonly: True
   entries:
