@@ -1,2 +1,0 @@
-Vanubuntu for You!
-==================
