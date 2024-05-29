@@ -8,7 +8,7 @@ Welcome to Vanubuntu's documentation!
 
 Vanubuntu is a set of modified Ubuntu builds that removes the original Ubuntu branding and modifications from the system. It includes vanilla GNOME, GNOME Boxes virtualization software, Gnome Connections remote desktop software, Flatpak, KDE Connect support (using GSConnect), and more.
 
-The official documentation for the Vanubuntu system is split into 2 manuals: "Vanubuntu for You" and "Build on Vanubuntu". Vanubuntu for You is for users who have installed Vanubuntu on their computers and. Build on Vanubuntu is for developers and explains how to follow the vanubuntu philoposhy when designing apps.
+The official documentation for the Vanubuntu system is split into 2 manuals: "Vanubuntu for You" and "Build on Vanubuntu". Vanubuntu for You is for users who have installed Vanubuntu on their computers and want to dive deeper into how to use it. Build on Vanubuntu is for developers and explains how to follow the vanubuntu philoposhy when designing apps.
 
 Both manuals can be found in the Help app.
 
