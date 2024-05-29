@@ -13,6 +13,10 @@ cat <<EOF | sudo tee /etc/apt/preferences.d/no-ud.pref
 # be installed though.
 # This prevents Vanubuntu configuration from being overitten by the hacky
 # Ubuntu files.
+#
+# DON'T REMOVE THIS FILE unless you know what you're doing. If you want
+# to use the ubuntu-desktop setup, install Canonical's standard Ubuntu
+# or install the Yaru GTK theme and Ubuntu's bundled extensions.
 Package: ubuntu-desktop
 Pin: release a=*
 Pin-Priority: -10
