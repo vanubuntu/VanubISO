@@ -7,6 +7,20 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+if [ "$CI" == "true" ]; then
+   echo "Assuming Daily Build because CI is true."
+else
+   echo "Note: Do NOT push these ISO files."
+   read -p "Do you want to really perform a build? (yes/no) " yn
+   case $yn in 
+   	yes ) echo ok, we will proceed;;
+   	no ) echo exiting...;
+   		exit;;
+   	* ) echo invalid response;
+   		exit 1;;
+   esac
+fi
+
 echo "Installing build tools..."
 apt-get install -y debootstrap schroot
 
