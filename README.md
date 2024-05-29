@@ -32,3 +32,7 @@ You can also pass the "flatpak" and/or "gsconnect" arguments to install the
 respective packages.
 
 Building takes around 5 minutes, depending on what packages you select.
+The result is a Live ISO image that lets you install or test the Vanubuntu
+system that was built on the ISO.
+
+Please note, you need `schroot` and `debootstrap` for vanubISO to build any images.
