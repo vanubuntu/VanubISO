@@ -1,6 +1,7 @@
 cat <<EOF | sudo tee /etc/apt/preferences.d/blacklist-snap.pref
 # Prevents snapd from being installed without consent. More info:
-# https://vanubuntu.github.io/VanubISO/blacklist.html
+# https://vanubuntu.github.io/VanubISO/misc/blacklist.html
+# This file is simply copypasted from a Linux Mint code file.
 
 Package: snapd
 Pin: release a=*
@@ -17,7 +18,7 @@ cat <<EOF | sudo tee /etc/apt/preferences.d/blacklist-ubuntu.pref
 # to use the ubuntu-desktop setup, install Canonical's standard Ubuntu
 # or install the Yaru GTK theme and Ubuntu's bundled extensions.
 #
-# More info: https://vanubuntu.github.io/VanubISO/blacklist.html
+# More info: https://vanubuntu.github.io/VanubISO/misc/blacklist.html
 
 Package: ubuntu-desktop
 Pin: release a=*
