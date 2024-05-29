@@ -45,6 +45,8 @@ it will install its dependencies itself.
 
 ### Change Configuration
 
+This tool only works if you have the `whiptail` package installed.
+
 Run `bash ./vanubuntu-tui.sh` as root to open a menu, where you can change the environment
 variables that control the ISO.
 
