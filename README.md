@@ -27,6 +27,8 @@ Non-Debian based distros will probably not offer debootstrap, which is required
 for VanubISO to work. This means you'll probably want to build the distro
 on Debian or Ubuntu.
 
+### Basic Build
+
 Run `bash ./vanubuntu.sh` as root to run the build.
 You can also pass the "flatpak" and/or "gsconnect" arguments to install the
 respective packages.
@@ -36,3 +38,16 @@ The result is a Live ISO image that lets you install or test the Vanubuntu
 system that was built on the ISO.
 
 Please note, you need `schroot` and `debootstrap` for vanubISO to build any images.
+Anyways, you don't have to install these manually, you can just run the script and
+it will install its dependencies itself.
+
+### Change Configuration
+
+Run `bash ./vanubuntu-tui.sh` as root to open a menu, where you can change the environment
+variables that control the ISO.
+
+You can either run a single Basic Build with these settings, or save these settings to use
+with future builds you perform.
+
+Do not push any changes made via this tool, else it will apply those changes to official
+daily builds performed by github.
