@@ -1,8 +1,6 @@
 The Vanubuntu APT Blacklist
 ===========================
 
-Some parts of this documentation page were originally written by a human and then sent to an artificial intelligence (AI) for expansion. The AI responses were carefully reviewed and edited by human editors to ensure their accuracy and clarity. This collaborative approach allowed for a more comprehensive and detailed explanation of the topic, resulting in a high-quality final product.
-
 Snapd and Snap Store
 --------------------
 
