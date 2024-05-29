@@ -7,4 +7,13 @@ subtrees:
   reversed: False
   titlesonly: True
   entries:
-  - file: vfy/blacklist
+  - file: vfy/index
+subtrees:
+- caption: Others
+  hidden: False
+  maxdepth: 1
+  numbered: True
+  reversed: False
+  titlesonly: True
+  entries:
+  - file: misc/blacklist
