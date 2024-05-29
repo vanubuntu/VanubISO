@@ -3,5 +3,5 @@ if [[ $CI != "true" ]]; then
   exit 1
 fi
 sudo apt update
-sudo apt install python3-sphinx
+pip install sphinx piccolo-theme
 sphinx-build docs build
