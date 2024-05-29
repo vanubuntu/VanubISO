@@ -1,4 +1,4 @@
-if [ -n $CI == "true" ]; then
+if [[ $CI != "true" ]]; then
   echo "This is a github actions specific script"
   exit 1
 fi
