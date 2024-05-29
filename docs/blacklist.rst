@@ -39,10 +39,6 @@ Bypass Restrictions
    a full re-install. The Vanubuntu Project is not responsible for the mods you perform
    on the internal files of your system.
 
-Run the following command:
-
-.. code::
-    cd /etc/apt/preferences.d/
-    rm blacklist-*.pref
+Open a terminal, then CD into ``/etc/apt/preferences.d/`` and run ``rm blacklist-*.pref``.
 
 You will then be able to install blacklisted packages or any packages that depend on them.
