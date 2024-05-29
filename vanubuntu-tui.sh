@@ -10,5 +10,5 @@ whiptail \
 }
 
 while true; do
-  OPTION=menu
+  menu
 done
