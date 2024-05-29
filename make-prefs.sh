@@ -17,6 +17,8 @@ cat <<EOF | sudo tee /etc/apt/preferences.d/no-ud.pref
 # DON'T REMOVE THIS FILE unless you know what you're doing. If you want
 # to use the ubuntu-desktop setup, install Canonical's standard Ubuntu
 # or install the Yaru GTK theme and Ubuntu's bundled extensions.
+#
+# More info: https://vanubuntu.github.io/VanubISO/blacklist.html
 Package: ubuntu-desktop
 Pin: release a=*
 Pin-Priority: -10
