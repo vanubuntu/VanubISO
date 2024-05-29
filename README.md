@@ -4,6 +4,8 @@ This repository contains the `vanubISO` command line tool to build Vanubuntu fro
 Ubuntu temporary chroot. It also contains some patches to original Ubuntu code
 that makes Vanubuntu work properly, preventing any bug rendering.
 
+For more info see [the docs](https://vanubuntu.github.io/VanubISO/).
+
 ## What is Vanubuntu?
 
 Vanubuntu is a Ubuntu-based distribution that features a mostly vanilla
