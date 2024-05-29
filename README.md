@@ -32,8 +32,8 @@ WSL has not been tested, you may need to enable wsl's systemd for it to work.
 ### Basic Build
 
 Run `bash ./vanubuntu.sh` as root to run the build.
-You can also pass the "flatpak" and/or "gsconnect" arguments to install the
-respective packages.
+
+> **Note:**<br>You can also pass the `flatpak` and/or `gsconnect` arguments to install the respective packages.
 
 Building takes around 5 minutes, depending on what packages you select.
 The result is a Live ISO image that lets you install or test the Vanubuntu
