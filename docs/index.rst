@@ -6,10 +6,12 @@
 Welcome to Vanubuntu's documentation!
 =====================================
 
-If you're a developer looking to create a customized version of Vanubuntu, this documentation is for you. However, if you're a regular user, we recommend visiting the official Vanubuntu website or using the Help app within your Vanubuntu installation for general information and support.
+Vanubuntu is a set of modified Ubuntu builds that removes the original Ubuntu branding and modifications from the system. It includes vanilla GNOME, GNOME Boxes virtualization software, Gnome Connections remote desktop software, Flatpak, KDE Connect support (using GSConnect), and more.
 
-VanubISO is a powerful tool that allows developers to create a chroot environment and select specific packages to include in their custom ISO. This tool is designed for developers and can be easily integrated into other programs with minimal modifications.
+The official documentation for the Vanubuntu system is split into 2 manuals: "Vanubuntu for You" and "Build on Vanubuntu". Vanubuntu for You is for users who have installed Vanubuntu on their computers and. Build on Vanubuntu is for developers and explains how to follow the vanubuntu philoposhy when designing apps.
 
-VanubISO is licensed under the GNU General Public License version 3, or any later version you choose. By using VanubISO, you agree to the terms of this license.
+Both manuals can be found in the Help app.
 
-Please note that some of the information in this documentation is specific to VanubISO and may not be relevant to regular Vanubuntu users. If you're looking for general information about Vanubuntu, we recommend visiting the official website or using the Help app within your installation.
+VanubISO and any official builds are licensed under GNU General Public License 3.0 or later. Feel free to fork VanubISO for yourself to create your own distro!
+
+This documentation is also licensed under the CC-BY-SA 4.0 License, meaning you have to give attribution if you use any part of this manual in your works, and you have to specify any modifications you make if you modify the documents.
