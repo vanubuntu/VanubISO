@@ -23,4 +23,6 @@ Non-Debian based distros will probably not offer debootstrap, which is required
 for VanubISO to work. This means you'll probably want to build the distro
 on Debian or Ubuntu.
 
-Run `vanubuntu.sh` to run the build.
+Run `bash ./vanubuntu.sh` as root to run the build.
+You can also pass the "flatpak" and/or "gsconnect" arguments to install the
+respective packages.
