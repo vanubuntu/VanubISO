@@ -8,6 +8,9 @@ Pin: release a=*
 Pin-Priority: -10
 EOF
 cat <<EOF | sudo tee /etc/apt/preferences.d/no-ud.pref
+# Due to ubuntu's sneaky installer scripting, this apt configuration will
+# prevent ubuntu-desktop from being installed. ubuntu-minimal can still
+# be installed though.
 Package: ubuntu-desktop
 Pin: release a=*
 Pin-Priority: -10
