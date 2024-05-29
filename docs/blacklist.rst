@@ -16,7 +16,9 @@ So Vanubuntu has solved this by blocking the snapd package. This also prevents
 the debs migrated to Snaps from being installed. Vanubuntu comes with alternative
 repos to allow the debs to be installed.
 
-Also, snapd is rendered pointless by flatpak.
+Also, snapd is rendered pointless by flatpak. Most of the apps available on Snap
+are also available as Flatpaks, the ones that aren't are usually cheaply made or
+solve a problem that never existed.
 
 Ubuntu Modifications
 --------------------
