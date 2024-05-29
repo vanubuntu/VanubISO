@@ -34,12 +34,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build Sphinx
-        run: sudo bash ./sphinx.sh
+        run: bash ./sphinx.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: 'build'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
