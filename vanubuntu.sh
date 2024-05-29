@@ -29,7 +29,7 @@ echo "Updating packages..."
 schroot -c vanubuntu -- apt-get update && schroot -c vanubuntu -- apt-get upgrade -y
 
 echo "Installing GNOME desktop environment..."
-schroot -c vanubuntu -- apt-get install -y gnome-core gnome-boxes gnome-connections gnome-core
+schroot -c vanubuntu -- apt-get install -y gnome-core gnome-boxes gnome-connections
 
 echo "Editing lsb-release file..."
 echo """PRETTY_NAME=\"Vanubuntu $VANUBUNTU_VERSION\"
@@ -48,6 +48,12 @@ echo "I'm a teapot :/"
 else
 echo "Doing extra work for $1 topping..."
 source ./topping/vanubuntu-$1.sh
+fi
+if [ $2 == "" ]; then
+echo "I'm another teapot :/"
+else
+echo "Doing extra work for $2 topping..."
+source ./topping/vanubuntu-$2.sh
 fi
 
 echo "Creating Vanubuntu ISO file..."
