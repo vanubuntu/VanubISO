@@ -41,7 +41,7 @@ Bypass Restrictions
 
 Run the following command:
 
-.. code-block::
+.. code::
     cd /etc/apt/preferences.d/
     rm blacklist-*.pref
 
