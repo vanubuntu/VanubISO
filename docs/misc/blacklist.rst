@@ -4,7 +4,7 @@ The Vanubuntu APT Blacklist
 Snapd and Snap Store
 --------------------
 
-The lack of Snap is complicated. The snap store is still propietary and is only controlled by Canonical, which is a bit sneaky on its Ubuntu system, as it essentially tries to get people to fall into the snap ecosystem, and that plan failed. Also, it is essentially rendered useless since most of the apps it offers are already available in either Debian or Flatpak form, and most of the apps that aren't available outside the Snap Store are poorly made in a way or two.
+The lack of Snap is complicated. The snap store is still propietary and is only controlled by the one and only Canonical Ltd, which is a bit sneaky on its Ubuntu system, as it essentially tries to get people to fall into the snap ecosystem, and that plan failed. Also, it is essentially rendered useless since most of the apps it offers are already available in either Debian or Flatpak form, and most of the apps that aren't available outside the Snap Store are poorly made in a way or two.
 
 Ubuntu Modifications
 --------------------
