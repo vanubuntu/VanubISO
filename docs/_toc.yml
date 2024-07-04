@@ -1,16 +1,6 @@
 root: index
 subtrees:
-- caption: Vanubuntu for You
-  hidden: False
-  maxdepth: 2
-  numbered: True
-  reversed: False
-  titlesonly: True
-  entries:
-  - file: vfy/intro
-    title: Index
-subtrees:
-- caption: Iceberg
+- caption: Detailed Notes
   hidden: False
   maxdepth: 1
   numbered: False
