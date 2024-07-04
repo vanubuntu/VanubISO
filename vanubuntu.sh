@@ -7,10 +7,13 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-echo "Installing build tools..."
-apt-get install -y debootstrap schroot
+echo "Vanubuntu conversion tool."
+echo "This will create an ISO file that can be used to"
+echo "run Vanubuntu."
+echo "It uses debootstrap and schroot so if you get"
+echo "'no such file or directory', you will likely have to"
+echo "install these tools."
 
-echo "Setting up fake Vanubuntu..."
 debootstrap --include="software-properties-common,ubiquity,squashfs-tools,lsb-release,git,gnome-session,ubiquity-frontend-gtk,ubuntu-minimal,grub-pc,grub-efi" --components="main,restricted,universe" --variant=buildd --arch amd64 $VANUBUNTU_VERSION_CODE $HOME/.vanubuntu-daily-build-chroot http://archive.ubuntu.com/ubuntu/
 echo """[vanubuntu]
 description=Vanubuntu $VANUBUNTU_VERSION daily LIVE ISO build
