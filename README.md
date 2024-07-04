@@ -17,10 +17,10 @@ flavours website.
 
 ## Download Builds
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/vanubuntu/vanubISO/daily.yml?style=plastic&logo=ubuntu&label=daily%20builds)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/vanubuntu/vanubISO/daily.yml?style=for-the-badge&logo=ubuntu&label=daily%20builds)](https://github.com/vanubuntu/VanubISO/actions/workflows/daily.yml)
 
 Live images are built every day at 12:00 UTC and can be found
-[here](https://github.com/vanubuntu/VanubISO/actions/workflows/daily.yml).
+by clicking the userbar above.
 You can also build your own images, see below.
 
 ## Building
