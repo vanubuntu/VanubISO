@@ -42,8 +42,6 @@ The result is a Live ISO image that lets you install or test the Vanubuntu
 system that was built on the ISO.
 
 Please note, you need `schroot` and `debootstrap` for vanubISO to build any images.
-Anyways, you don't have to install these manually, you can just run the script and
-it will install its dependencies itself.
 
 ### Change Configuration
 
