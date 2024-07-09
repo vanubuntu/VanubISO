@@ -1,0 +1,2 @@
+all:
+	./vanubuntu.sh
